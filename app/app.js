@@ -5,6 +5,7 @@ angular.module('myApp', [
   'ngRoute',
   'ngAnimate',
   'firebase',
+  'myApp.admin',
   'myApp.services',
   'myApp.products',
   'myApp.onDeck',

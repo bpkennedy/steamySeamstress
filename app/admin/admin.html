@@ -1,0 +1,54 @@
+<div class="container">
+    <div class='row newService' ng-show="newServiceReady" ng-hide="!newServiceReady">
+        <i class="fa fa-close fa-2x pull-right" ng-click="newServiceReady = false"></i>
+        <h2>New Product here:</h2>
+        <label for='titleInput'>Service Title:</label>
+        <input ng-model='title' type='text' id='titleInput' placeholder='what is the new service?...'>
+        <label for='descrInput'>Service Description:</label>
+        <input ng-model='description' type='text' id='descrInput' placeholder='type description...'>
+        <label for='iconInput'>Service Icon CSS class:</label>
+        <input ng-model='icon' type='text' id='iconInput' placeholder='(from font-awesome cheat sheet)...'>
+        <label for='activeInput'>Active?:</label>
+        <input ng-model='active' type='text' id='activeInput' placeholder=' (type "true" or "false")...'>
+        <form ng-submit="addService($event)">
+            <input type="submit" id="submit" value="Submit" />
+        </form>
+    </div>
+
+    <table class="table">
+        <tr>
+            <th>Service</th>
+            <th>Description</th>
+            <th>Icon</th>
+            <th>Active</th>
+            <th>Actions</th>
+        </tr>
+        <tr ng-repeat="service in allServices">
+            <td>
+                <span ng-hide="editMode">{{ service.title }}</span>
+                <input data-ng-show="editMode" type="text" data-ng-model="service.title">
+            </td>
+            <td>
+                <span ng-hide="editMode">{{ service.description }}</span>
+                <input data-ng-show="editMode" type="text" data-ng-model="service.description">
+            </td>
+            <td>
+                <span ng-hide="editMode">{{ service.icon }}</span>
+                <input data-ng-show="editMode" type="text" data-ng-model="service.icon">
+            </td>
+            <td>
+                <span ng-hide="editMode">{{ service.active }}</span>
+                <select data-ng-show="editMode" type="text" data-ng-model="service.active">
+                    <option>true</option>
+                    <option>false</option>
+                </select>
+            </td>
+            <td>
+                <i class="fa fa-edit" ng-click="editMode = true;"></i>
+                <i class="fa fa-trash" ng-click="allServices.$remove(service)"></i>
+                <i class="fa fa-close" ng-show="editMode" ng-click="editMode = false;"></i>
+            </td>
+        </tr>
+    </table>
+    <button ng-click="newServiceReady = true">Add new</button>
+</div>

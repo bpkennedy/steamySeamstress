@@ -62,3 +62,10 @@ body {
     -ms-animation: bounceOut .8s;
     animation: bounceOut .8s;
 }
+.row.newService {
+    background: none repeat scroll 0 0 #fff;
+    min-height: 800px;
+    position: absolute;
+    width: 94%;
+    z-index: 10;
+}

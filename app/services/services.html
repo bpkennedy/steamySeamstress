@@ -11,21 +11,4 @@
 			<p class="text-center grayFade">{{service.description}}</p>
 		</div>
 	</div>
-
-    <div class='row'>
-        <h2>New Product here:</h2>
-        <label for='titleInput'>Service Title:</label>
-        <input ng-model='title' type='text' id='titleInput' placeholder='what is the new service?...'>
-        <label for='descrInput'>Service Description:</label>
-        <input ng-model='description' type='text' id='descrInput' placeholder='type description...'>
-        <label for='iconInput'>Service Icon CSS class:</label>
-        <input ng-model='icon' type='text' id='iconInput' placeholder='(from font-awesome cheat sheet)...'>
-        <label for='activeInput'>Active?:</label>
-        <input ng-model='active' type='text' id='activeInput' placeholder=' (type "true" or "false")...'>
-    </div>
-
-    <form ng-submit="addService($event)">
-        Press Enter to create a new Service in the database:
-        <input type="submit" id="submit" value="Submit" />
-    </form>
 </div>

@@ -1,22 +1,20 @@
 'use strict';
 
-angular.module('myApp.services', ['ngRoute', 'ngAnimate', 'firebase'])
+angular.module('myApp.admin', ['ngRoute'])
 
-.config(['$routeProvider', function($routeProvider) {
-  $routeProvider.when('/services', {
-    templateUrl: 'services/services.html',
-    controller: 'ServicesCtrl',
-	controllerAs: 'services'
-  });
-}])
+    .config(['$routeProvider', function($routeProvider) {
+        $routeProvider.when('/admin', {
+            templateUrl: 'admin/admin.html',
+            controller: 'AdminCtrl',
+            controllerAs: 'admin'
+        });
+    }])
 
-.controller('ServicesCtrl', function($scope, $timeout, $firebase) {
+    .controller('AdminCtrl', function($scope, $timeout, $firebase) {
+        var newServiceReady = false;
+        var editMode = false;
         var ref = new Firebase("https://steamy.firebaseio.com/services");
-        $scope.allServices = [];
-        $timeout(function() {
-            $scope.allServices = $firebase(ref).$asArray();
-        }, 50);
-
+        $scope.allServices = $firebase(ref).$asArray();
 
         $scope.addService = function(e) {
             if ($scope.title && $scope.title && $scope.description && $scope.icon && $scope.active ) {
@@ -27,5 +25,4 @@ angular.module('myApp.services', ['ngRoute', 'ngAnimate', 'firebase'])
                 $scope.allServices.$add({title: name, description: description, icon: icon, active: active});
             }
         }
-});
-
+    });
