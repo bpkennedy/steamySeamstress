@@ -4,6 +4,7 @@
 angular.module('myApp', [
   'ngRoute',
   'ngAnimate',
+  'firebase',
   'myApp.services',
   'myApp.products',
   'myApp.onDeck',
