@@ -11,7 +11,7 @@ angular.module('myApp.admin', ['ngRoute'])
     }])
 
     .controller('AdminCtrl', function($scope, $timeout, $firebase) {
-        var newServiceReady = false;
+        window.newServiceReady = false;
         var editMode = false;
         var ref = new Firebase("https://steamy.firebaseio.com/services");
         $scope.allServices = $firebase(ref).$asArray();
