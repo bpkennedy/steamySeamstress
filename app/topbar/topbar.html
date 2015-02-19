@@ -1,0 +1,29 @@
+<div class="container" ng-controller="TopbarCtrl">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#/Home">Ss</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+        <ul class="nav navbar-nav">
+            <li><a href="#/services">Services</a></li>
+            <li><a href="#/products">Products</a></li>
+            <li><a href="#/onDeck">OnDeck</a></li>
+            <li><a href="#/policies">Policies</a></li>
+            <li><a href="#/admin" ng-show="userName == 'bpkennedy@gmail.com' && isLogged == true;">Admin</a></li>
+        </ul>
+        <div class="pull-right homeLogin">
+            <div ng-show="isLogged == false;">
+                <a class="btn loginButton" href="#/login">Login</a>
+                <a class="btn loginButton" href="#/login">Register</a>
+            </div>
+            <div ng-show="isLogged == true;">
+                {{checkUser()}} | <a class="btn loginButton" href="#" ng-click="logOut();">Logout</a>
+            </div>
+        </div>
+    </div><!--/.nav-collapse -->
+</div>

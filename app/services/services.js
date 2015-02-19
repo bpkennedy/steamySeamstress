@@ -10,15 +10,12 @@ angular.module('myApp.services', ['ngRoute', 'ngAnimate', 'firebase'])
   });
 }])
 
-.controller('ServicesCtrl', function($scope, $timeout, $firebase, userService) {
+.controller('ServicesCtrl', function($scope, $timeout, $firebase) {
         var ref = new Firebase("https://steamy.firebaseio.com/services");
         $scope.allServices = [];
         $timeout(function() {
             $scope.allServices = $firebase(ref).$asArray();
         }, 50);
-
-        $scope.test = userService.currentUser;
-
 
         $scope.addService = function(e) {
             if ($scope.title && $scope.title && $scope.description && $scope.icon && $scope.active ) {
