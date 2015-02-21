@@ -38,25 +38,25 @@ body {
 	width:100px;
 	margin:40px auto;
 }
-.serviceBounce.ng-enter {  
+.serviceBounce.ng-enter {
     -webkit-animation: bounceIn .8s;
     -moz-animation: bounceIn .8s;
     -ms-animation: bounceIn .8s;
     animation: bounceIn .8s;
 }
-.serviceBounce.ng-enter.ng-enter.active {  
+.serviceBounce.ng-enter.ng-enter.active {
     -webkit-animation: bounceIn .8s;
     -moz-animation: bounceIn .8s;
     -ms-animation: bounceIn .8s;
     animation: bounceIn .8s;
 }
-.serviceBounce.ng-leave {  
+.serviceBounce.ng-leave {
     -webkit-animation: bounceOut .8s;
     -moz-animation: bounceOut .8s;
     -ms-animation: bounceOut .8s;
     animation: bounceOut .8s;
 }
-.serviceBounce.ng-leave.ng-leave-active {  
+.serviceBounce.ng-leave.ng-leave-active {
     -webkit-animation: bounceOut .8s;
     -moz-animation: bounceOut .8s;
     -ms-animation: bounceOut .8s;
@@ -87,4 +87,15 @@ body {
 .loginButton{
     background-color:dodgerblue;
     color:#ffffff;
+}
+.productCardHolder{
+  display:flex;
+  flex-flow:row wrap;
+}
+.productPanel{
+  display: inline-block;
+  flex-grow: 1;
+  margin-right: 15px;
+  margin-top: 20px;
+  min-width: 250px;
 }
