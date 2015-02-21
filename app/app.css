@@ -97,5 +97,81 @@ body {
   flex-grow: 1;
   margin-right: 15px;
   margin-top: 20px;
-  min-width: 250px;
+  min-width: 270px;
+}
+.prodDollar {
+  display: inline-block;
+  position: absolute;
+  right: 0;
+  top: 8px;
+  margin-right:10px;
+}
+.prodCost{
+  position:relative;
+  margin-bottom:20px;
+}
+.productCenterHolder {
+  position:relative;
+  height:200px;
+  padding:0px;
+}
+.leftArrow{
+  display: inline-block;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 35px;
+  transition:all 0.1s ease;
+  -webkit-transition:all 0.1s ease;
+}
+.leftArrow:hover {
+  color:#1DB61D;
+  font-size:16px;
+  cursor:pointer;
+  top:-2px;
+}
+.productLeftIcon {
+  left: 10px;
+  position: absolute;
+  top: 70px;
+}
+.productRightIcon {
+  left: 10px;
+  position: absolute;
+  top: 70px;
+}
+.rightArrow{
+  display: inline-block;
+  height: 100%;
+  right: 0;
+  position: absolute;
+  top: 0;
+  width: 35px;
+  transition:all 0.2s ease;
+  -webkit-transition:all 0.2s ease;
+}
+.rightArrow:hover{
+  color:#1DB61D;
+  font-size:16px;
+  cursor:pointer;
+  top:-2px;
+}
+.productCenter {
+  left: 35px;
+  position: absolute;
+  width: 197px;
+}
+.productCenter img {
+  height:auto;
+  max-width:100%;
+}
+.prodCostFooter{
+  position:relative;
+  min-height:38px;
+}
+.prodCartIcon {
+  position:absolute;
+  right:10px;
+  top:0px;
 }
