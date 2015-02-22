@@ -1,7 +1,7 @@
 <div class="container adminHolder">
     <div class='row newService' ng-show="newServiceReady" ng-hide="!newServiceReady">
         <i class="fa fa-close fa-2x pull-right" ng-click="newServiceReady = false"></i>
-        <h2>New Product here:</h2>
+        <h2>New Service here:</h2>
         <label for='titleInput'>Service Title:</label>
         <input ng-model='title' type='text' id='titleInput' placeholder='what is the new service?...'>
         <label for='descrInput'>Service Description:</label>
@@ -14,8 +14,26 @@
             <input type="submit" id="submit" value="Submit" />
         </form>
     </div>
-
-    <table class="table" ng-hide="newServiceReady == true;">
+    <div class='row newService' ng-show="newProductReady" ng-hide="!newProductReady">
+        <i class="fa fa-close fa-2x pull-right" ng-click="newProductReady = false"></i>
+        <h2>New Product here:</h2>
+        <label for='titleInput2'>Product Title:</label>
+        <input ng-model='productTitle' type='text' id='titleInput2' placeholder='product name'>
+        <label for='descrInput2'>Product Description:</label>
+        <input ng-model='productDescription' type='text' id='descrInput2' placeholder='type description...'>
+        <label for='priceInput2'>Price:</label>
+        <input ng-model='productPrice' type='text' id='priceInput2' placeholder='price'>
+        <label for='quantityInput2'>Quantity:</label>
+        <input ng-model='productQuantity' type='text' id='quantityInput2' placeholder='how many do you have?'>
+        <label for='activeInput2'>Active?:</label>
+        <input ng-model='productActive' type='text' id='activeInput2' placeholder=' (type "true" or "false")...'>
+        <form ng-submit="addProduct($event); newProductReady = false;">
+            <input type="submit" id="submit2" value="Submit" />
+        </form>
+    </div>
+  <div ng-hide="newServiceReady == true;">
+    <h1>Services</h1>
+    <table class="table">
         <tr>
             <th>Service</th>
             <th>Description</th>
@@ -52,4 +70,51 @@
         </tr>
     </table>
     <button ng-click="newServiceReady = true">Add new</button>
+  </div>
+    <hr>
+  <div ng-hide="newProductReady == true;">
+    <h1>Products</h1>
+    <table class="table">
+        <tr>
+            <th>Title</th>
+            <th>Description</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th>Active</th>
+            <th>Actions</th>
+        </tr>
+        <tr ng-repeat="product in allProducts">
+            <td>
+                <span ng-hide="editMode">{{ product.title }}</span>
+                <input data-ng-show="editMode" type="text" data-ng-model="product.title">
+            </td>
+            <td>
+                <span ng-hide="editMode">{{ product.description }}</span>
+                <textarea class="serviceDescription" data-ng-show="editMode" type="text" data-ng-model="product.description"></textarea>
+            </td>
+            <td>
+                <span ng-hide="editMode">{{ product.price }}</span>
+                <input data-ng-show="editMode" type="text" data-ng-model="product.price">
+            </td>
+            <td>
+                <span ng-hide="editMode">{{ product.quantity }}</span>
+                <input data-ng-show="editMode" type="text" data-ng-model="product.quantity">
+            </td>
+            <td>
+                <span ng-hide="editMode">{{ product.active }}</span>
+                <select data-ng-show="editMode" type="text" data-ng-model="product.active">
+                    <option>true</option>
+                    <option>false</option>
+                </select>
+            </td>
+            <td>
+                <i class="fa fa-edit" ng-click="editMode = true;" ng-show="!editMode"></i>
+                <i class="fa fa-check" ng-click="editMode = false; allProducts.$save(product)" ng-show="editMode"></i>
+                <i class="fa fa-trash" ng-click="allProducts.$remove(product)" ng-show="!editMode"></i>
+                <i class="fa fa-close" ng-show="editMode" ng-click="editMode = false;"></i>
+            </td>
+        </tr>
+    </table>
+    <button ng-click="newProductReady = true">Add new</button>
+  </div>
 </div>

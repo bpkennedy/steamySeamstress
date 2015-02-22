@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('myApp.topbar', ['ngRoute', 'ngAnimate'])
+angular.module('myApp.topbar', ['ngRoute', 'ngAnimate', 'ngCart'])
 
     .controller('TopbarCtrl', function($scope, userService) {
         $scope.checkUser = function() {

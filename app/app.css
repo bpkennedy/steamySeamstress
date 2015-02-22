@@ -70,7 +70,7 @@ body {
 }
 .row.newService {
     background: none repeat scroll 0 0 #fff;
-    min-height: 365px;
+    min-height: 435px;
     position: absolute;
     width: 100%;
     z-index: 10;
@@ -88,9 +88,27 @@ body {
     background-color:dodgerblue;
     color:#ffffff;
 }
+/*Products page*/
+.utilityHolder {
+  position:relative;
+}
+.searchHolder {
+  max-width:270px;
+  min-width:270px;
+  display:inline-block;
+}
+.sortAndFilter {
+  display: inline-block;
+  height: 34px;
+  position: absolute;
+}
+.sortAndFilter i {
+  position:absolute;
+  margin:10px;
+}
 .productCardHolder{
-  display:flex;
-  flex-flow:row wrap;
+  /*display:flex;
+  flex-flow:row wrap;*/
 }
 .productPanel{
   display: inline-block;
@@ -174,4 +192,14 @@ body {
   position:absolute;
   right:10px;
   top:0px;
+}
+.shoppingIcon {
+  position: absolute;
+  right: 0;
+  top: 7px;
+}
+.shoppingDetailIcon {
+  position:absolute;
+  left:10px;
+  top:7px;
 }

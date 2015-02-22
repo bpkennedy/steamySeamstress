@@ -23,6 +23,9 @@
             </div>
             <div ng-show="isLogged == true;">
                 {{checkUser()}} | <a class="btn loginButton" href="#" ng-click="logOut();">Logout</a>
+                <a href="#/cart">
+                  <ngcart-summary id="{{ item.id }}" name="{{ item.name }}" price="{{ item.price }}" data="item"></ngcart-summary>
+                </a>
             </div>
         </div>
     </div><!--/.nav-collapse -->

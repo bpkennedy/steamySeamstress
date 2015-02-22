@@ -5,6 +5,8 @@ angular.module('myApp', [
   'ngRoute',
   'ngAnimate',
   'firebase',
+  'ngCart',
+  'myApp.cart',
   'myApp.topbar',
   'myApp.login',
   'myApp.admin',

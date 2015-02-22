@@ -16,15 +16,4 @@ angular.module('myApp.services', ['ngRoute', 'ngAnimate', 'firebase'])
         $timeout(function() {
             $scope.allServices = $firebase(ref).$asArray();
         }, 50);
-
-        $scope.addService = function(e) {
-            if ($scope.title && $scope.title && $scope.description && $scope.icon && $scope.active ) {
-                var name = $scope.title;
-                var description = $scope.description;
-                var icon = $scope.icon;
-                var active = $scope.active;
-                $scope.allServices.$add({title: name, description: description, icon: icon, active: active});
-            }
-        }
 });
-
