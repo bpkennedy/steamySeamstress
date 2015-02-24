@@ -21,11 +21,13 @@
                 <a class="btn loginButton" href="#/login">Login</a>
                 <a class="btn loginButton" href="#/login">Register</a>
             </div>
-            <div ng-show="isLogged == true;">
+            <div class="loginState" ng-show="isLogged == true;">
                 {{checkUser()}} | <a class="btn loginButton" href="#" ng-click="logOut();">Logout</a>
-                <a href="#/cart">
-                  <ngcart-summary id="{{ item.id }}" name="{{ item.name }}" price="{{ item.price }}" data="item"></ngcart-summary>
-                </a>
+            </div>
+            <div ng-show="isLogged == true;" class="cartLink">
+              <a href="#/cart">
+                <ngcart-summary id="{{ item.id }}" name="{{ item.name }}" price="{{ item.price }}" data="item"></ngcart-summary>
+              </a>
             </div>
         </div>
     </div><!--/.nav-collapse -->

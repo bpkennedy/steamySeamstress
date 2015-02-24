@@ -7,6 +7,7 @@ angular.module('myApp', [
   'firebase',
   'ngCart',
   'myApp.cart',
+  'myApp.checkout',
   'myApp.topbar',
   'myApp.login',
   'myApp.admin',

@@ -82,7 +82,12 @@ body {
 }
 .homeLogin{
     position: relative;
-    top: 8px;
+    height:50px;
+}
+.homeLogin div {
+  float:left;
+  margin-top:8px;
+  margin-right:5px;
 }
 .loginButton{
     background-color:dodgerblue;
@@ -190,8 +195,14 @@ body {
 }
 .prodCartIcon {
   position:absolute;
-  right:10px;
-  top:0px;
+  right:5px;
+  top:3px;
+  line-height:1.7;
+}
+.prodCartItemHave {
+  line-height: 1.5;
+  margin: 3px 0 0;
+  padding: 0 4px;
 }
 .shoppingIcon {
   position: absolute;
@@ -202,4 +213,10 @@ body {
   position:absolute;
   left:10px;
   top:7px;
+}
+.cartLink {
+    margin-top: -4px !important;
+}
+.cartItems{
+  margin-top:0px!important;
 }
