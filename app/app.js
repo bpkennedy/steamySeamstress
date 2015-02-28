@@ -8,6 +8,7 @@ angular.module('myApp', [
   'ngCart',
   'myApp.cart',
   'myApp.checkout',
+  'myApp.paymentForm',
   'myApp.topbar',
   'myApp.login',
   'myApp.admin',
