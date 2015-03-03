@@ -112,8 +112,8 @@ body {
   margin:10px;
 }
 .productCardHolder{
-  /*display:flex;
-  flex-flow:row wrap;*/
+  display:flex;
+  flex-flow:row wrap;
 }
 .productPanel{
   display: inline-block;
@@ -210,9 +210,10 @@ body {
   top: 7px;
 }
 .shoppingDetailIcon {
-  position:absolute;
+  /*position:absolute;
   left:10px;
-  top:7px;
+  top:7px;*/
+  display:block;
 }
 .cartLink {
     margin-top: -4px !important;

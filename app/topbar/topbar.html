@@ -11,7 +11,8 @@
     <div id="navbar" class="navbar-collapse collapse">
         <ul class="nav navbar-nav">
             <li><a href="#/services">Services</a></li>
-            <li><a href="#/products">Products</a></li>
+            <li><a href="#/order">Order Stuff</a></li>
+            <!--<li><a href="#/products">Products</a></li>-->
             <li><a href="#/onDeck">OnDeck</a></li>
             <li><a href="#/policies">Policies</a></li>
             <li><a href="#/admin" ng-show="userName == 'bpkennedy@gmail.com' && isLogged == true;">Admin</a></li>
@@ -24,7 +25,7 @@
             <div class="loginState" ng-show="isLogged == true;">
                 {{checkUser()}} | <a class="btn loginButton" href="#" ng-click="logOut();">Logout</a>
             </div>
-            <div ng-show="isLogged == true;" class="cartLink">
+            <div ng-show="isLogged == true && item.id;" class="cartLink">
               <a href="#/cart">
                 <ngcart-summary id="{{ item.id }}" name="{{ item.name }}" price="{{ item.price }}" data="item"></ngcart-summary>
               </a>
