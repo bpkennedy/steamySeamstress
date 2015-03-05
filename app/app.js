@@ -14,6 +14,7 @@ angular.module('myApp', [
   'myApp.admin',
   'myApp.services',
   'myApp.order',
+  'myApp.orderDetail',
   'myApp.products',
   'myApp.onDeck',
   'myApp.policies',
@@ -100,13 +101,13 @@ factory('buildOrder', function($location) {
     var buildOrder = {};
     buildOrder.itemTitle = {};
     buildOrder.itemPrice = {};
+    
 
     return {
         buildInitialItem: function(name, price) {
             if (name && price) {
               buildOrder.itemTitle = name;
               buildOrder.itemPrice = price;
-              return $location.path('/orderDetail');
             }
         }
     };
