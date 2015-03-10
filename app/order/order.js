@@ -19,14 +19,12 @@ angular.module('myApp.order', ['ngRoute', 'ngCart'])
         $scope.allProducts = [];
         $timeout(function() {
             $scope.allProducts = $firebase(ref).$asArray();
+
         }, 50);
 
-        $scope.saveOrderData = function () {
-            var newItemTitle = this.product.title;
-            var newItemPrice = this.product.price;
-            console.log(newItemTitle);
-            console.log(newItemPrice);
-            buildOrder.buildInitialItem(newItemTitle, newItemPrice);
+        $scope.saveOrderData = function (title, price) {
+            buildOrder.setOrderTitle(title);
+            buildOrder.setOrderPrice(price);
             $location.path('/orderDetail');
         }
 

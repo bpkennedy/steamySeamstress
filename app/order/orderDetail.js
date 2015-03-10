@@ -11,6 +11,8 @@ angular.module('myApp.orderDetail', ['ngRoute', 'ngCart'])
 }])
 
 .controller('OrderDetailCtrl', function($scope, buildOrder) {
-    $scope.itemTitle = buildOrder.itemTitle;
-    $scope.itemPrice = buildOrder.itemPrice;
+    var orderTitle = buildOrder.getOrderTitle();
+    var orderPrice = buildOrder.getOrderPrice();
+    $scope.orderTitle = orderTitle;
+    $scope.orderPrice = orderPrice;
 });

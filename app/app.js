@@ -98,17 +98,36 @@ factory('userService', ["$firebaseAuth", function($firebaseAuth, $location) {
 }
 ]).
 factory('buildOrder', function($location) {
-    var buildOrder = {};
-    buildOrder.itemTitle = {};
-    buildOrder.itemPrice = {};
-    
+    var order = {};
+    var itemTitle = "";
+    var itemPrice = "";
+    var itemColor = "";
 
-    return {
-        buildInitialItem: function(name, price) {
-            if (name && price) {
-              buildOrder.itemTitle = name;
-              buildOrder.itemPrice = price;
-            }
-        }
-    };
+    order.setOrderTitle = function(title) {
+      itemTitle = title;
+      console.log("factory is " + itemTitle);
+    }
+
+    order.getOrderTitle = function() {
+      return itemTitle;
+      console.log("getTitle in factory is " + itemTitle);
+    }
+
+    order.setOrderPrice = function(price) {
+      itemPrice = price;
+    }
+
+    order.getOrderPrice = function() {
+      return itemPrice;
+    }
+
+    order.setOrderColor = function(color) {
+      itemColor = color;
+    }
+
+    order.getOrderColor = function() {
+      return itemColor;
+    }
+
+    return order;
 });
