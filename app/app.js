@@ -102,6 +102,7 @@ factory('buildOrder', function($location) {
     var itemTitle = "";
     var itemPrice = "";
     var itemColor = "";
+    var itemSize = "";
 
     order.setOrderTitle = function(title) {
       itemTitle = title;
@@ -113,8 +114,18 @@ factory('buildOrder', function($location) {
       console.log("getTitle in factory is " + itemTitle);
     }
 
+    order.setOrderSize = function(size) {
+      itemSize = size;
+      console.log("factory size is " + itemSize);
+    }
+
+    order.getOrderSize = function() {
+      return itemSize;
+    }
+
     order.setOrderPrice = function(price) {
       itemPrice = price;
+      console.log("factory price is " + itemPrice);
     }
 
     order.getOrderPrice = function() {
@@ -123,6 +134,7 @@ factory('buildOrder', function($location) {
 
     order.setOrderColor = function(color) {
       itemColor = color;
+      console.log("factory color is " + itemColor);
     }
 
     order.getOrderColor = function() {
