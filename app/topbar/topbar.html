@@ -1,35 +1,31 @@
-<div class="container" ng-controller="TopbarCtrl">
-    <div class="navbar-header">
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand" href="#/Home">Ss</a>
-    </div>
-    <div id="navbar" class="navbar-collapse collapse">
-        <ul class="nav navbar-nav">
-            <li><a href="#/services">Services</a></li>
-            <li><a href="#/order">Order Stuff</a></li>
-            <!--<li><a href="#/products">Products</a></li>-->
-            <li><a href="#/onDeck">OnDeck</a></li>
-            <li><a href="#/policies">Policies</a></li>
-            <li><a href="#/admin" ng-show="userName == 'bpkennedy@gmail.com' && isLogged == true;">Admin</a></li>
+
+<header id="top" role="banner">
+  <div class="block">
+      <h1 class="block-title">Steamy Seamstress</h1>
+      <a class="nav-btn" id="nav-open-btn" ng-click="changeClass()" href="#nav">Book Navigation</a>
+  </div>
+</header>
+
+<nav id="nav" role="navigation">
+    <div class="block">
+        <h2 class="block-title">Chapters</h2>
+        <ul>
+            <li class="is-active">
+                <a href="#">Chapter 1</a>
+            </li><!--
+         --><li>
+                <a href="#">Chapter 2</a>
+            </li><!--
+         --><li>
+                <a href="#">Chapter 3</a>
+            </li><!--
+         --><li>
+                <a href="#">Chapter 4</a>
+            </li><!--
+         --><li>
+                <a href="#">Chapter 5</a>
+            </li>
         </ul>
-        <div class="pull-right homeLogin">
-            <div ng-show="isLogged == false;">
-                <a class="btn loginButton" href="#/login">Login</a>
-                <a class="btn loginButton" href="#/login">Register</a>
-            </div>
-            <div class="loginState" ng-show="isLogged == true;">
-                {{checkUser()}} | <a class="btn loginButton" href="#" ng-click="logOut();">Logout</a>
-            </div>
-            <div ng-show="isLogged == true && item.id;" class="cartLink">
-              <a href="#/cart">
-                <ngcart-summary id="{{ item.id }}" name="{{ item.name }}" price="{{ item.price }}" data="item"></ngcart-summary>
-              </a>
-            </div>
-        </div>
-    </div><!--/.nav-collapse -->
-</div>
+        <a class="close-btn" id="nav-close-btn" href="#top">Return to Content</a>
+    </div>
+</nav>

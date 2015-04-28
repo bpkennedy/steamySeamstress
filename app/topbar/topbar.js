@@ -1,21 +1,18 @@
 'use strict';
 
-angular.module('myApp.topbar', ['ngRoute', 'ngAnimate', 'ngCart'])
+angular.module('myApp.topbar', ['ngRoute', 'ngAnimate'])
 
-    .controller('TopbarCtrl', function($scope, userService) {
-        $scope.checkUser = function() {
-            var thisUser = userService.showUser();
-            if (thisUser) {
-                $scope.userName = thisUser;
-                $scope.isLogged = true;
-                return $scope.userName;
-            } else {
-                $scope.isLogged = false;
-                console.log("No User logged in");
-            }
-        };
+    .controller('TopbarCtrl', function($scope) {
+      $scope.isJsReady = false;
+      $scope.isJsNav = false;
 
-        $scope.logOut = function() {
-            userService.logOut();
+      $scope.toggleSideNav = function(){
+        if ($scope.isJsNav === false) {
+          $scope.isJsReady = true;
+          $scope.isJsNav = true;
         }
+        else {
+          $scope.isJsNav = false;
+        }
+      };
     });

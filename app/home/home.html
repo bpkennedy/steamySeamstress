@@ -1,1 +1,57 @@
-<p>This is the partial for Home.</p>
+
+<div class="container-fluid steamyHeader">
+	<div class="servicesContainer">
+		<h2 class="text-center servicesHeader">Costume Design</h2>
+	</div>
+	<p class="text-center lead steamyLead">When you won't put up with any short shrift on apparel.  Cut it down to size, make it smaller or bigger, you know how we do!  All night.  Lovin' not Hatin'.</p>
+</div>
+<div class="container-fluid servicesRow">
+	<div class="row">
+		<div class="serviceHeaderContainer">
+			<h2 class="text-center">Services</h2>
+			<p class="text-center lead steamyServiceLead">I provide a specific set of services and would love to work with you on something useful!</p>
+		</div>
+		<div class="col-sm-4 serviceSpacer" ng-repeat="service in allServices">
+			<!--<div class="text-center">
+				<i class="fa fa-2x {{service.icon}}"></i>
+			</div>
+			<h3 class="text-center">{{service.title}}</h3>
+			<p class="text-center grayFade">{{service.description}}</p>-->
+			<div class="card">
+				<div class="upperHalf">
+					<div>{{service.description}}</div>
+				</div>
+				<div class="circleContainer">
+					<i class="fa fa-2x {{service.icon}}"></i>
+				</div>
+				<div class="lowerHalf">
+					<div>{{service.title}}</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<hr class="sectionBreak">
+<div class="container-fluid steamyPortfolio">
+	<div class="row">
+		<div class="serviceHeaderContainer">
+			<h2 class="text-center">Portfolio</h2>
+			<p class="text-center lead steamyServiceLead">Check out a sample of some of the things that I've been working on.</p>
+		</div>
+		<div class="col-sm-4 serviceSpacer" ng-repeat="folio in allPortfolio">
+			<div class="cardFolio">
+				<div class="cardImage">
+					<div class="folioImages" ng-repeat="(key, value) in folio.projectImages">
+						<img src="{{value}}"/>
+					</div>
+				</div>
+				<div class="folioTitle">{{folio.projectName}}</div>
+				<div class="cardContent">
+					<div class="folioDescription">
+						<p>{{folio.projectDescription}}</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
