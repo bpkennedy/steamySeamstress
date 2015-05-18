@@ -4,11 +4,18 @@
 		<h2 class="text-center servicesHeader">Costume Design</h2>
 	</div>
 	<p class="text-center lead steamyLead">When you won't put up with any short shrift on apparel.  Cut it down to size, make it smaller or bigger, you know how we do!  All night.  Lovin' not Hatin'.</p>
+	<div id="backgroundLayer"></div>
+	<div id="middleLayer">
+		<img id="leftGear" src="./images/gear.svg"/>
+		<img id="rightGear" src="./images/gear.svg"/>
+	</div>
+	<div id="frontLayer">
+	</div>
 </div>
 <div class="container-fluid servicesRow">
 	<div class="row">
 		<div class="serviceHeaderContainer">
-			<h2 class="text-center">Services</h2>
+			<h2 class="text-center"><a id="services">Services</a></h2>
 			<p class="text-center lead steamyServiceLead">I provide a specific set of services and would love to work with you on something useful!</p>
 		</div>
 		<div class="col-sm-4 serviceSpacer" ng-repeat="service in allServices">
@@ -31,11 +38,10 @@
 		</div>
 	</div>
 </div>
-<hr class="sectionBreak">
 <div class="container-fluid steamyPortfolio">
 	<div class="row">
 		<div class="serviceHeaderContainer">
-			<h2 class="text-center">Portfolio</h2>
+			<h2 class="text-center"><a id="portfolio">Portfolio</a></h2>
 			<p class="text-center lead steamyServiceLead">Check out a sample of some of the things that I've been working on.</p>
 		</div>
 		<div class="col-sm-4 serviceSpacer" ng-repeat="folio in allPortfolio">
