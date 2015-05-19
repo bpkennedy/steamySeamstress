@@ -654,3 +654,8 @@ a:focus {
   top: 565px;
   right: 0;
 }
+.steamyContact {
+  z-index:10;
+  position:relative;
+  background-color: #cbcbe3;
+}
