@@ -8,7 +8,7 @@ angular.module('myApp.home', ['ngRoute', 'ngAnimate', 'firebase'])
     controller: 'HomeCtrl',
 	controllerAs: 'home'
   });
-}])
+}]) 
 
 .controller('HomeCtrl', function($scope, $timeout, $firebase, $rootScope, $http) {
         var ref = new Firebase("https://steamy.firebaseio.com/services");
@@ -24,6 +24,7 @@ angular.module('myApp.home', ['ngRoute', 'ngAnimate', 'firebase'])
           $scope.allPortfolio = $firebase(ref2).$asArray();
         }, 50);
 
+        //hero effects and scrolling
         $(window).bind('scroll',function(e){
         	parallaxScroll();
         });

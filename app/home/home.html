@@ -13,9 +13,9 @@
 	</div>
 </div>
 <div class="container-fluid servicesRow">
-	<div class="row">
+	<div class="row" id="services">
 		<div class="serviceHeaderContainer">
-			<h2 class="text-center"><a id="services">Services</a></h2>
+			<h2 class="text-center"><a>Services</a></h2>
 			<p class="text-center lead steamyServiceLead">I provide a specific set of services and would love to work with you on something useful!</p>
 		</div>
 		<div class="col-sm-4 serviceSpacer" ng-repeat="service in allServices">
@@ -39,9 +39,9 @@
 	</div>
 </div>
 <div class="container-fluid steamyPortfolio">
-	<div class="row">
+	<div class="row" id="portfolio">
 		<div class="serviceHeaderContainer">
-			<h2 class="text-center"><a id="portfolio">Portfolio</a></h2>
+			<h2 class="text-center"><a>Portfolio</a></h2>
 			<p class="text-center lead steamyServiceLead">Check out a sample of some of the things that I've been working on.</p>
 		</div>
 		<div class="col-sm-4 serviceSpacer" ng-repeat="folio in allPortfolio">
@@ -62,17 +62,25 @@
 	</div>
 </div>
 <div class="container-fluid steamyContact">
-	<div class="row">
+	<div class="row"  id="contactMe">
 		<div class="contactHeader">
-			<h2 class="text-center"><a id="portfolio">Contact Me</a></h2>
+			<h2 class="text-center"><a>Contact Me</a></h2>
 			<p class="text-center lead steamyServiceLead">Questions or feedback?  Send me a message!</p>
 		</div>
-		<div class="col-md-3"></div>
-		<div class="col-md-6">
+		<div class="col-md-3 col-md-offset-1 picContainer">
+			<div class="cardFolio">
+				<div class="cardImage">
+					<img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRbezqZpEuwGSvitKy3wrwnth5kysKdRqBW54cAszm_wiutku3R" width=140 height=140 class="img-circle">
+				</div>
+				<div class="cardContent">
+					<div class="folioDescription">
+						<p>Here is where some text is going to go. I'm going to say a little bit about myself and you people are going to read it, kapeesh? You'll damn well read it and you'll bloody well like it.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-6 contactFormContainer">
 	      <div class="panel panel-default">
-	          <div class="panel-heading">
-	              <h2 class="panel-title">Contact Form</h2>
-	          </div>
 	          <div class="panel-body">
 	              <form ng-submit="submit(contactform)" name="contactform" method="post" action="" class="form-horizontal" role="form">
 	                  <div class="form-group" ng-class="{ 'has-error': contactform.inputName.$invalid && submitted }">
@@ -111,7 +119,5 @@
 	          </div>
 	      </div>
 			</div>
-			<div class="col-md-3"></div>
-	  </div>
-	</div>
+		</div>
 </div>

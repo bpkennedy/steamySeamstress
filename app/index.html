@@ -27,8 +27,9 @@
               <img src="images/officialwordpresslogo.png" class="steamyLogo"/>
             </a>-->
             <!--<h1 class="block-title"><a class="homeLink" href="#/home">Steamy Seamstress</a></h1>-->
-            <a href="#services"><h5 class="block-smallTitle">Services</h5></a>
-            <a href="#portfolio"><h5 class="block-smallTitle">Portfolio</h5></a>
+            <a scroll-to-item scroll-to="#services"><h5 class="block-smallTitle">Services</h5></a>
+            <a scroll-to-item scroll-to="#portfolio"><h5 class="block-smallTitle">Portfolio</h5></a>
+            <a scroll-to-item scroll-to="#contactMe"><h5 class="block-smallTitle">Contact Me</h5></a>
             <a href="#/policies"><h5 class="block-smallTitle">Policies</h5></a>
             <a class="nav-btn" id="nav-open-btn" ng-click="toggleSideNav()" href="#nav"><i class="fa fa-gears fa-2x"></i></a>
         </div>
@@ -39,6 +40,9 @@
               <h2 class="block-title">Chapters</h2>
               <ul>
                   <li class="is-active">
+                      <a scroll-to-item scroll-to="#services" ng-click="toggleSideNav()">Services</a>
+                      <a scroll-to-item scroll-to="#portfolio" ng-click="toggleSideNav()">Portfolio</a>
+                      <a scroll-to-item scroll-to="#contactMe" ng-click="toggleSideNav()">Contact Me</a>
                       <a href="#/policies" ng-click="toggleSideNav()">Policies</a>
                   </li>
               </ul>
@@ -50,7 +54,6 @@
   <![endif]-->
 
   <div ng-view></div>
-
 
 
 
