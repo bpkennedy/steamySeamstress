@@ -62,22 +62,29 @@ a:focus {
 	min-height:200px;
 }
 .servicesHeader {
-   border: 1px solid #ffffff;
-   border-radius: 4px;
-   display: inline-block;
-   font-weight: 400;
-   margin: 0;
-   padding: 50px;
-   font-family:ornatique;
+    background-color: #cbcbe3;
+    border: 1px solid #cbcbe3;
+    border-radius: 4px;
+    color: #bb5761;
+    display: inline-block;
+    font-family: ornatique;
+    font-size: 54px;
+    font-weight: 400;
+    margin: 0;
+    padding: 10px 10px 5px;
+    position: relative;
+    z-index: 100;
 }
 .servicesContainer {
-  margin: 15% auto 0;
-  text-align: center;
-  width: 100%;
+    margin: 8% auto 0;
+    text-align: center;
+    width: 100%;
 }
 .steamyLead {
   margin: 30px auto 0;
   width: 75%;
+  z-index:100;
+  position:relative;
 }
 .half-rule {
 	width:100px;
@@ -626,7 +633,7 @@ a:focus {
   left:0;
   width: 100%;
   height: 800px;
-  background: url("./images/cs3b.jpeg") center no-repeat;
+  background: url("./images/dressForm.png") center no-repeat;
   background-size:cover;
 }
 #middleLayer {
@@ -636,7 +643,7 @@ a:focus {
   left:0;
   width: 100%;
   height: 800px;
-  background: url("./images/cs2b.png") center no-repeat;
+  background: url("./images/tableMachineIron.png") center no-repeat;
   background-size:cover;
 }
 #frontLayer {
@@ -646,7 +653,7 @@ a:focus {
   left:0;
   width: 100%;
   height: 800px;
-  background: url("./images/cs1b.png") center no-repeat;
+  background: url("./images/steam.png") center no-repeat;
   background-size:cover;
 }
 #leftGear {

@@ -31,6 +31,21 @@
             <input type="submit" id="submit2" value="Submit" />
         </form>
     </div>
+    <div class='row newPortfolio' ng-show="newPortfolioReady" ng-hide="!newPortfolioReady">
+        <i class="fa fa-close fa-2x pull-right" ng-click="newPortfolioReady = false"></i>
+        <h2>New Portfolio here:</h2>
+        <label for='titleInput'>Portfolio Title:</label>
+        <input ng-model='portfolioName' type='text' id='titleInput' placeholder='what is the name of the new Portfolio?...'>
+        <label for='descrInput'>Portfolio Description:</label>
+        <input ng-model='portfolioDescription' type='text' id='descrInput' placeholder='type description...'>
+        <label for='activeInput'>Active?:</label>
+        <input ng-model='portfolioActive' type='text' id='activeInput' placeholder=' (type "true" or "false")...'>
+        <label for='titleInput'>Portfolio Image Link:</label>
+        <input ng-model='portfolioImage' type='text' id='titleInput' placeholder='put link to portfolio image here...'>
+        <form ng-submit="addPortfolio($event); newPortfolioReady = false;">
+            <input type="submit" id="submit" value="Submit" />
+        </form>
+    </div>
   <div ng-hide="newServiceReady == true;">
     <h1>Services</h1>
     <table class="table">
@@ -116,5 +131,46 @@
         </tr>
     </table>
     <button ng-click="newProductReady = true">Add new</button>
+  </div>
+  <hr>
+  <div ng-hide="newPortfolioReady == true;">
+    <h1>Portfolio</h1>
+    <table class="table">
+        <tr>
+            <th>Portfolio</th>
+            <th>Description</th>
+            <th>Active</th>
+            <th>Image Url</th>
+            <th>Actions</th>
+        </tr>
+        <tr ng-repeat="portfolio in allPortfolios">
+            <td>
+                <span ng-hide="editMode">{{ portfolio.name }}</span>
+                <input data-ng-show="editMode" type="text" data-ng-model="portfolio.name">
+            </td>
+            <td>
+                <span ng-hide="editMode">{{ portfolio.description }}</span>
+                <textarea class="serviceDescription" data-ng-show="editMode" type="text" data-ng-model="portfolio.description"></textarea>
+            </td>
+            <td>
+                <span ng-hide="editMode">{{ portfolio.image }}</span>
+                <input data-ng-show="editMode" type="text" data-ng-model="portfolio.image">
+            </td>
+            <td>
+                <span ng-hide="editMode">{{ portfolio.active }}</span>
+                <select data-ng-show="editMode" type="text" data-ng-model="portfolio.active">
+                    <option>true</option>
+                    <option>false</option>
+                </select>
+            </td>
+            <td>
+                <i class="fa fa-edit" ng-click="editMode = true;" ng-show="!editMode"></i>
+                <i class="fa fa-check" ng-click="editMode = false; allPortfolios.$save(portfolio)" ng-show="editMode"></i>
+                <i class="fa fa-trash" ng-click="allPortfolios.$remove(portfolio)" ng-show="!editMode"></i>
+                <i class="fa fa-close" ng-show="editMode" ng-click="editMode = false;"></i>
+            </td>
+        </tr>
+    </table>
+    <button ng-click="newPortfolioReady = true">Add new</button>
   </div>
 </div>

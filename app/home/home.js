@@ -8,7 +8,7 @@ angular.module('myApp.home', ['ngRoute', 'ngAnimate', 'firebase'])
     controller: 'HomeCtrl',
 	controllerAs: 'home'
   });
-}]) 
+}])
 
 .controller('HomeCtrl', function($scope, $timeout, $firebase, $rootScope, $http) {
         var ref = new Firebase("https://steamy.firebaseio.com/services");
@@ -31,13 +31,10 @@ angular.module('myApp.home', ['ngRoute', 'ngAnimate', 'firebase'])
 
         function parallaxScroll(){
         	var scrolled = $(window).scrollTop();
-          var theta = $(window).scrollTop() % Math.PI;
-          $('#leftGear').css({ transform: 'rotate(' + theta + 'rad)' });
-          $('#rightGear').css({ transform: 'rotate(-' + theta + 'rad)' });
 
         	$('#backgroundLayer').css('top',(0-(scrolled*.85))+'px');
         	$('#middleLayer').css('top',(0-(scrolled*.5))+'px');
-        	$('#frontLayer').css('top',(0-(scrolled*.15))+'px');
+        	$('#frontLayer').css('top',(0-(scrolled*.6))+'px');
         }
 
         //contact form
