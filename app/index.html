@@ -2,7 +2,7 @@
 <!--[if lt IE 7]>      <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html lang="en" ng-app="myApp" class="no-js" ng-controller="TopbarCtrl" ng-class="{'js-ready' : isJsReady, 'js-nav' : isJsNav}"> <!--<![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en" ng-app="myApp" ng-strict-di class="no-js" ng-controller="TopbarCtrl" ng-class="{'js-ready' : isJsReady, 'js-nav' : isJsNav}"> <!--<![endif]-->
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -32,8 +32,11 @@
             <a scroll-to-item scroll-to="#contactMe"><h4 class="block-smallTitle">Contact Me</h4></a>
             <a href="#/policies"><h4 class="block-smallTitle">Policies</h4></a>
             <a class="nav-btn" id="nav-open-btn" ng-click="toggleSideNav()" href="#nav"><i class="fa fa-gears fa-2x"></i></a>
+            <div ng-click="goToFacebook()" class="facebookIcon pull-right"><i class="fa fa-facebook fa-2x"></i></div>
         </div>
       </header>
+      <div ng-repeat="promotion in Promotion" class="steamyAlert alert alert-{{promotion.type}}" role="alert" ng-show="{{promotion.active}}">{{promotion.createdOn}} - {{promotion.description}}</div>
+
 
       <nav id="nav" role="navigation">
           <div class="block">

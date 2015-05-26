@@ -11,6 +11,7 @@ angular.module('myApp', [
   'myApp.home',
   'myApp.version'
 ]).
-config(['$routeProvider', function($routeProvider) {
+config(['$routeProvider', '$compileProvider', function($routeProvider, $compileProvider) {
   $routeProvider.otherwise({redirectTo: '/home'});
+  $compileProvider.debugInfoEnabled(false);
 }]);

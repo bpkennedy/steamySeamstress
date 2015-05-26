@@ -14,7 +14,7 @@
             <input type="submit" id="submit" value="Submit" />
         </form>
     </div>
-    <div class='row newService' ng-show="newProductReady" ng-hide="!newProductReady">
+    <!--<div class='row newService' ng-show="newProductReady" ng-hide="!newProductReady">
         <i class="fa fa-close fa-2x pull-right" ng-click="newProductReady = false"></i>
         <h2>New Product here:</h2>
         <label for='titleInput2'>Product Title:</label>
@@ -30,7 +30,7 @@
         <form ng-submit="addProduct($event); newProductReady = false;">
             <input type="submit" id="submit2" value="Submit" />
         </form>
-    </div>
+    </div>-->
     <div class='row newPortfolio' ng-show="newPortfolioReady" ng-hide="!newPortfolioReady">
         <i class="fa fa-close fa-2x pull-right" ng-click="newPortfolioReady = false"></i>
         <h2>New Portfolio here:</h2>
@@ -43,6 +43,21 @@
         <label for='titleInput'>Portfolio Image Link:</label>
         <input ng-model='portfolioImage' type='text' id='titleInput' placeholder='put link to portfolio image here...'>
         <form ng-submit="addPortfolio($event); newPortfolioReady = false;">
+            <input type="submit" id="submit" value="Submit" />
+        </form>
+    </div>
+    <div class='row newPortfolio' ng-show="newPromotionReady" ng-hide="!newPromotionReady">
+        <i class="fa fa-close fa-2x pull-right" ng-click="newPromotionReady = false"></i>
+        <h2>New Promotion here:</h2>
+        <label for='titleInput'>Promotion Text:</label>
+        <input ng-model='promotionDescription' type='text' id='titleInput' placeholder='This is the text that will appear in the alert...'>
+        <label for='descrInput'>Promotion Type:</label>
+        <input ng-model='promotionType' type='text' id='descrInput' placeholder='Type 4 choices for color of the message "success" for green, "info" for blue, "warning" for yellow, and "danger" for red...'>
+        <label for='activeInput'>Active?:</label>
+        <input ng-model='promotionActive' type='text' id='activeInput' placeholder=' (type "true" or "false" - this determines if the alert appears or is hidden)...'>
+        <label for='titleInput'>Promotion Created On Date:</label>
+        <input ng-model='promotionCreatedOn' type='text' id='titleInput' placeholder='write the created on Date...'>
+        <form ng-submit="addPromotion($event); newPromotionReady = false;">
             <input type="submit" id="submit" value="Submit" />
         </form>
     </div>
@@ -86,8 +101,8 @@
     </table>
     <button ng-click="newServiceReady = true">Add new</button>
   </div>
-    <hr>
-  <div ng-hide="newProductReady == true;">
+  <hr>
+  <!--<div ng-hide="newProductReady == true;">
     <h1>Products</h1>
     <table class="table">
         <tr>
@@ -132,29 +147,29 @@
     </table>
     <button ng-click="newProductReady = true">Add new</button>
   </div>
-  <hr>
+  <hr>-->
   <div ng-hide="newPortfolioReady == true;">
     <h1>Portfolio</h1>
     <table class="table">
         <tr>
             <th>Portfolio</th>
             <th>Description</th>
-            <th>Active</th>
             <th>Image Url</th>
+            <th>Active</th>
             <th>Actions</th>
         </tr>
         <tr ng-repeat="portfolio in allPortfolios">
             <td>
-                <span ng-hide="editMode">{{ portfolio.name }}</span>
-                <input data-ng-show="editMode" type="text" data-ng-model="portfolio.name">
+                <span ng-hide="editMode">{{ portfolio.projectName }}</span>
+                <input data-ng-show="editMode" type="text" data-ng-model="portfolio.projectName">
             </td>
             <td>
-                <span ng-hide="editMode">{{ portfolio.description }}</span>
-                <textarea class="serviceDescription" data-ng-show="editMode" type="text" data-ng-model="portfolio.description"></textarea>
+                <span ng-hide="editMode">{{ portfolio.projectDescription }}</span>
+                <textarea class="serviceDescription" data-ng-show="editMode" type="text" data-ng-model="portfolio.projectDescription"></textarea>
             </td>
             <td>
-                <span ng-hide="editMode">{{ portfolio.image }}</span>
-                <input data-ng-show="editMode" type="text" data-ng-model="portfolio.image">
+                <span ng-hide="editMode">{{ portfolio.projectImages.url1 }}</span>
+                <input data-ng-show="editMode" type="text" data-ng-model="portfolio.projectImages.url1">
             </td>
             <td>
                 <span ng-hide="editMode">{{ portfolio.active }}</span>
@@ -172,5 +187,45 @@
         </tr>
     </table>
     <button ng-click="newPortfolioReady = true">Add new</button>
+  </div>
+  <div ng-hide="newPromotionReady == true;">
+    <h1>Promotion/Message</h1>
+    <table class="table">
+        <tr>
+            <th>Text</th>
+            <th>Created On</th>
+            <th>Type</th>
+            <th>Active</th>
+            <th>Actions</th>
+        </tr>
+        <tr ng-repeat="promo in Promotions">
+            <td>
+                <span ng-hide="editMode">{{ promo.description }}</span>
+                <textarea class="serviceDescription" data-ng-show="editMode" type="text" data-ng-model="promo.description"></textarea>
+            </td>
+            <td>
+                <span ng-hide="editMode">{{ promo.createdOn }}</span>
+                <input data-ng-show="editMode" type="text" data-ng-model="promo.createdOn">
+            </td>
+            <td>
+                <span ng-hide="editMode">{{ promo.type }}</span>
+                <input data-ng-show="editMode" type="text" data-ng-model="promo.type">
+            </td>
+            <td>
+                <span ng-hide="editMode">{{ promo.active }}</span>
+                <select data-ng-show="editMode" type="text" data-ng-model="promo.active">
+                    <option>true</option>
+                    <option>false</option>
+                </select>
+            </td>
+            <td>
+                <i class="fa fa-edit" ng-click="editMode = true;" ng-show="!editMode"></i>
+                <i class="fa fa-check" ng-click="editMode = false; Promotions.$save(promo)" ng-show="editMode"></i>
+                <i class="fa fa-trash" ng-click="Promotions.$remove(promo)" ng-show="!editMode"></i>
+                <i class="fa fa-close" ng-show="editMode" ng-click="editMode = false;"></i>
+            </td>
+        </tr>
+    </table>
+    <button ng-click="newPromotionReady = true">Add new</button>
   </div>
 </div>

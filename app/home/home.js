@@ -10,7 +10,7 @@ angular.module('myApp.home', ['ngRoute', 'ngAnimate', 'firebase'])
   });
 }])
 
-.controller('HomeCtrl', function($scope, $timeout, $firebase, $rootScope, $http) {
+.controller('HomeCtrl', ['$scope', '$timeout', '$firebase', '$rootScope', '$http', function($scope, $timeout, $firebase, $rootScope, $http) {
         var ref = new Firebase("https://steamy.firebaseio.com/services");
         var ref2 = new Firebase("https://steamy.firebaseio.com/portfolio");
         $scope.allServices = [];
@@ -70,4 +70,4 @@ angular.module('myApp.home', ['ngRoute', 'ngAnimate', 'firebase'])
                $scope.result='bg-danger';
            }
         }
-});
+}]);

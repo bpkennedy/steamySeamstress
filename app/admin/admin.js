@@ -3,17 +3,18 @@
 angular.module('myApp.admin', ['ngRoute'])
 
     .config(['$routeProvider', function($routeProvider) {
-        $routeProvider.when('/admin', {
+        $routeProvider.when('/SakBpk2', {
             templateUrl: 'admin/admin.html',
             controller: 'AdminCtrl',
             controllerAs: 'admin'
         });
     }])
 
-    .controller('AdminCtrl', function($scope, $timeout, $firebase) {
+    .controller('AdminCtrl', ['$scope', '$timeout', '$firebase', function($scope, $timeout, $firebase) {
         window.newServiceReady = false;
         window.newProductReady = false;
         window.newPortfolioReady = false;
+        window.newPromotionReady = false;
         var editMode = false;
         var ref = new Firebase("https://steamy.firebaseio.com/services");
         $scope.allServices = $firebase(ref).$asArray();
@@ -21,6 +22,8 @@ angular.module('myApp.admin', ['ngRoute'])
         $scope.allProducts = $firebase(ref2).$asArray();
         var ref3 = new Firebase("https://steamy.firebaseio.com/portfolio");
         $scope.allPortfolios = $firebase(ref3).$asArray();
+        var ref4 = new Firebase("https://steamy.firebaseio.com/Promotion");
+        $scope.Promotions = $firebase(ref4).$asArray();
 
         $scope.addService = function(e) {
             if ($scope.title && $scope.title && $scope.description && $scope.icon && $scope.active ) {
@@ -42,12 +45,20 @@ angular.module('myApp.admin', ['ngRoute'])
             }
         }
         $scope.addPortfolio = function(e) {
-            if ($scope.portfolioName && $scope.portfolioDescription && $scope.portfolioActive && $scope.portfolioImage ) {
+            if ($scope.portfolioName && $scope.portfolioDescription && $scope.portfolioActive ) {
                 var name = $scope.portfolioName;
                 var description = $scope.portfolioDescription;
                 var active = $scope.portfolioActive;
-                var image = $scope.portfolioImage;
-                $scope.allPortfolios.$add({projectName: name, projectDescription: description, active: active, projectImages: image});
+                $scope.allPortfolios.$add({projectName: name, projectDescription: description, active: active});
             }
         }
-    });
+        $scope.addPromotion = function(e) {
+            if ($scope.promotionDescription && $scope.promotionType && $scope.promotionActive && $scope.promotionCreatedOn ) {
+                var description = $scope.promotionDescription;
+                var type = $scope.promotionType;
+                var active = $scope.promotionActive;
+                var createdOn = $scope.promotionCreatedOn;
+                $scope.Promotion.$add({description: description, type: type, active: active, createdOn: createdOn});
+            }
+        }
+    }]);

@@ -398,9 +398,9 @@ a:focus {
     top: 50%;
     right: -0.03125em;
     margin-top: -0.625em;
-    border-top: 0.625em transparent solid;
-    border-bottom: 0.625em transparent solid;
-    border-right: 0.625em #583F7E solid;
+  }
+  .is-active a:hover {
+    cursor:pointer;
   }
   #nav li a {
     padding: 0.85714em 2.14286em;
@@ -608,6 +608,31 @@ a:focus {
     padding: 15px;
 }
 /*Policies page*/
+#sidebar-menu ul {
+  max-width: 200px;
+}
+#sidebar-menu .main-menu a {
+    display: block;
+	font-size: 13px;
+	font-weight: 500;
+	color: #fff!important;
+	padding: 4px 20px;
+  cursor: pointer;
+}
+#sidebar-menu .main-menu a:hover {
+	color: #11427D;
+	text-decoration: none;
+	background-color: transparent;
+	border-left: 1px solid #555;
+}
+
+#sidebar-menu .sub-menu a {
+	padding-top: 1px;
+	padding-bottom: 1px;
+	padding-left: 30px;
+	font-size: 12px;
+	font-weight: 400;
+}
 .steamyPolicies {
   background-color:#BB5761;
   color:#ffffff;
@@ -699,4 +724,26 @@ a:focus {
     position: absolute;
     right: 0;
     top: 30px;
+}
+.facebookIcon {
+    background-color: #3b5998;
+    border: 1px solid #3b5998;
+    border-radius: 50%;
+    height: 50px;
+    position: absolute;
+    right: 15px;
+    top: 10px;
+    width: 50px;
+}
+.facebookIcon:hover {
+  cursor:pointer;
+}
+.facebookIcon i {
+  left: 15px;
+  position: absolute;
+  top: 10px;
+}
+.steamyAlert {
+    border-radius: 0;
+    margin: 0;
 }
